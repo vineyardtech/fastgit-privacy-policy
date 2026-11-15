@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FastGit</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            background-color: #f6f8fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            font-size: 28px;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: #0366d6;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            color: #24292e;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 6px;
+        }
+        p, li {
+            font-size: 14px;
+            color: #444d56;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .date {
+            font-style: italic;
+            color: #586069;
+            margin-bottom: 25px;
+        }
+        .contact-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .contact-list li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy for FastGit</h1>
+        <div class="date">Last updated: November 16, 2026</div>
+
+        <p>FastGit ("we", "our", "us", or "the app"), developed and operated by Vineyard Tech, is committed to respecting and protecting your privacy. This Privacy Policy details our practices regarding the collection, usage, and safeguarding of information when you download, install, and use the FastGit mobile application.</p>
+
+        <h2>1. Information We Collect and How We Handle It</h2>
+        <ul>
+            <li><strong>GitHub Authentication & Account Data:</strong> When you sign in to FastGit using GitHub OAuth or Device Authorization Flow, authentication is handled directly through GitHub’s official servers. Your OAuth tokens, session tokens, and account details are stored locally on your device in secure, private app storage. FastGit accesses repository information, pull requests, issues, and workflows solely to display them within the application. We do not store, copy, or transfer your tokens or private code to any external servers.</li>
+            <li><strong>Keystore Files & Build Secrets:</strong> If you utilize the automated Keystore secret propagation feature, your .jks files, aliases, and passwords remain strictly on your device. When propagating secrets to a target repository, the credentials are encrypted directly using standard Libsodium / NaCl Sealed Box encryption and uploaded directly to GitHub's Actions Secrets API endpoints. We have no access to your private signing keys or build passwords.</li>
+            <li><strong>Contact & Support Inquiries:</strong> When you reach out to us via the in-app "Contact Us" screen, the information you submit (Name, Email address, and Message) is processed through our form service provider, Formspree (formspree.io), strictly to receive and respond to your support requests, inquiries, or bug reports.</li>
+            <li><strong>Local Logs & Crash Diagnostics:</strong> FastGit includes a local diagnostic console ("Live Logs") that tracks session activity and errors inside your device's isolated app storage. These logs stay completely local to your device unless you explicitly use the "Save File" button to export them to your Downloads folder.</li>
+        </ul>
+
+        <h2>2. Third-Party Services & Advertising</h2>
+        <p>FastGit displays advertisements served by Google AdMob. To provide ads and measure ad performance, the Google Mobile Ads SDK may automatically process certain device information, including:</p>
+        <ul>
+            <li>Android Advertising ID (AAID)</li>
+            <li>Device identifiers, network connection type, and IP address</li>
+            <li>Approximate location (country/city level)</li>
+            <li>App interaction metrics, performance diagnostics, and crash logs</li>
+        </ul>
+        <p>This data is processed in accordance with Google's Privacy Policy. For more details on how Google uses this data, please visit:<br>
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a></p>
+
+        <h2>3. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>Local Data:</strong> You may clear your cached data, stored repository trees, and account credentials at any time directly in the app via Settings -> App -> Clear Cache or by signing out of your account via Settings -> Auth -> Log Out. Uninstalling the app permanently purges all locally stored credentials and cache.</li>
+            <li><strong>Support Messages:</strong> Information submitted via the Contact Us form is retained only as long as necessary to address your feedback or support ticket, after which you may request deletion by contacting us.</li>
+        </ul>
+
+        <h2>4. Security of Your Information</h2>
+        <p>All external network communication performed by FastGit—including requests to the GitHub REST API, Google AdMob services, and Formspree support endpoints—is conducted strictly over secure, encrypted HTTPS/TLS connections. We do not sell, rent, monetize, or trade any personal information or user code to third parties.</p>
+
+        <h2>5. Children's Privacy</h2>
+        <p>FastGit is a professional developer utility intended for software developers and individuals aged 18 and older. We do not knowingly collect personal information from children under the age of 13.</p>
+
+        <h2>6. Updates to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy periodically to reflect app updates, policy changes, or legal requirements. Any modifications will be posted directly to this URL with an updated "Last updated" date.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at:</p>
+        <ul class="contact-list">
+            <li><strong>Organization:</strong> Vineyard Tech</li>
+            <li><strong>Business Contact:</strong> <a href="mailto:contact@vineyardtech.online">contact@vineyardtech.online</a></li>
+            <li><strong>Developer Email:</strong> <a href="mailto:josymvine@gmail.com">josymvine@gmail.com</a></li>
+        </ul>
+    </div>
+</body>
+</html>
