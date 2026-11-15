@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - FastGit</title>
+    <title>Privacy Policy &amp; Data Deletion - FastGit</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -41,7 +44,7 @@
         /* Main Container placed below the fixed header */
         .container {
             max-width: 800px;
-            margin: 110px auto 40px auto; /* Top margin accounts for fixed header height */
+            margin: 110px auto 40px auto;
             background: #ffffff;
             padding: 40px;
             border-radius: 8px;
@@ -54,12 +57,19 @@
             color: #24292e;
             border-bottom: 1px solid #eaecef;
             padding-bottom: 6px;
+            scroll-margin-top: 115px;
+        }
+        h3 {
+            font-size: 15px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            color: #24292e;
         }
         p, li {
             font-size: 14px;
             color: #444d56;
         }
-        ul {
+        ul, ol {
             padding-left: 20px;
         }
         li {
@@ -68,7 +78,23 @@
         .date {
             font-style: italic;
             color: #586069;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+        .quick-nav {
+            background-color: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            font-size: 13px;
+        }
+        .deletion-box {
+            background-color: #f1f8ff;
+            border: 1px solid #c8e1ff;
+            border-left: 4px solid #0366d6;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 16px 0;
         }
         .contact-list {
             list-style-type: none;
@@ -84,6 +110,12 @@
         a:hover {
             text-decoration: underline;
         }
+        code {
+            background-color: #f6f8fa;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
         @media (max-width: 768px) {
             .container {
                 margin-top: 100px;
@@ -95,6 +127,9 @@
             }
             .header-banner h1 {
                 font-size: 20px;
+            }
+            h2 {
+                scroll-margin-top: 95px;
             }
         }
     </style>
@@ -111,47 +146,77 @@
     <div class="container">
         <div class="date">Last updated: November 16, 2026</div>
 
-        <p>FastGit ("we", "our", "us", or "the app"), developed and operated by Vineyard Tech, is committed to respecting and protecting your privacy. This Privacy Policy details our practices regarding the collection, usage, and safeguarding of information when you download, install, and use the FastGit mobile application.</p>
+        <div class="quick-nav">
+            <strong>Quick Links:</strong>
+            <a href="#information-collected">Information Collected</a> &middot;
+            <a href="#third-party-ads">Third-Party Services &amp; Ads</a> &middot;
+            <a href="#data-deletion">Account &amp; Data Deletion</a> &middot;
+            <a href="#contact-us">Contact Us</a>
+        </div>
 
-        <h2>1. Information We Collect and How We Handle It</h2>
+        <p>FastGit ("we", "our", "us", or "the app"), developed and operated by <strong>Vineyard Tech</strong>, is committed to respecting and protecting your privacy. This Privacy Policy details our practices regarding the collection, usage, and safeguarding of information when you download, install, and use the FastGit mobile application.</p>
+
+        <h2 id="information-collected">1. Information We Collect and How We Handle It</h2>
         <ul>
-            <li><strong>GitHub Authentication & Account Data:</strong> When you sign in to FastGit using GitHub OAuth or Device Authorization Flow, authentication is handled directly through GitHub’s official servers. Your OAuth tokens, session tokens, and account details are stored locally on your device in secure, private app storage. FastGit accesses repository information, pull requests, issues, and workflows solely to display them within the application. We do not store, copy, or transfer your tokens or private code to any external servers.</li>
-            <li><strong>Keystore Files & Build Secrets:</strong> If you utilize the automated Keystore secret propagation feature, your .jks files, aliases, and passwords remain strictly on your device. When propagating secrets to a target repository, the credentials are encrypted directly using standard Libsodium / NaCl Sealed Box encryption and uploaded directly to GitHub's Actions Secrets API endpoints. We have no access to your private signing keys or build passwords.</li>
-            <li><strong>Contact & Support Inquiries:</strong> When you reach out to us via the in-app "Contact Us" screen, the information you submit (Name, Email address, and Message) is processed through our form service provider, Formspree (formspree.io), strictly to receive and respond to your support requests, inquiries, or bug reports.</li>
-            <li><strong>Local Logs & Crash Diagnostics:</strong> FastGit includes a local diagnostic console ("Live Logs") that tracks session activity and errors inside your device's isolated app storage. These logs stay completely local to your device unless you explicitly use the "Save File" button to export them to your Downloads folder.</li>
+            <li><strong>GitHub Authentication &amp; Account Data:</strong> When you sign in to FastGit using GitHub OAuth or Device Authorization Flow, authentication is handled directly through GitHub’s official servers. Your OAuth tokens, GitHub User ID/username, display name, avatar URL, and account session details are stored locally on your device in private app storage to support multi-account switching. FastGit accesses repository information, pull requests, issues, releases, and workflows solely to display and manage them at your request. Vineyard Tech does not store, copy, or transfer your GitHub tokens or private source code to any Vineyard Tech servers.</li>
+            <li><strong>Keystore Files &amp; Build Secrets:</strong> If you utilize the automated Keystore secret propagation feature, your saved <code>.jks</code> keystore profiles, aliases, and passwords are stored strictly locally in your device's private database. When propagating secrets to a target repository, the credentials are encrypted directly on your device using standard Libsodium / NaCl Sealed Box encryption and uploaded directly to GitHub's Actions Secrets API endpoints. We have no access to your private signing keys or build passwords.</li>
+            <li><strong>Contact &amp; Support Inquiries:</strong> When you reach out to us via the in-app "Contact Us" screen, the information you submit (Name, Email address, and Message) is transmitted and processed through our form service provider, Formspree (<code>formspree.io</code>), strictly to receive and respond to your support requests, inquiries, or bug reports.</li>
+            <li><strong>Local Logs &amp; Crash Diagnostics:</strong> FastGit includes a local diagnostic console ("Live Logs") that tracks session activity and crash errors inside your device's isolated app storage. These logs stay completely local to your device unless you explicitly use the "Save File" button to export them to your Downloads folder.</li>
         </ul>
 
-        <h2>2. Third-Party Services & Advertising</h2>
-        <p>FastGit displays advertisements served by Google AdMob. To provide ads and measure ad performance, the Google Mobile Ads SDK may automatically process certain device information, including:</p>
+        <h2 id="third-party-ads">2. Third-Party Services &amp; Advertising</h2>
+        <p>FastGit displays advertisements served by <strong>Google AdMob</strong>. To provide ads, prevent fraud, and measure ad performance, the Google Mobile Ads SDK may automatically collect and share certain device and diagnostic information, including:</p>
         <ul>
-            <li>Android Advertising ID (AAID)</li>
-            <li>Device identifiers, network connection type, and IP address</li>
-            <li>Approximate location (country/city level)</li>
-            <li>App interaction metrics, performance diagnostics, and crash logs</li>
+            <li>Android Advertising ID (AAID) and App Set ID</li>
+            <li>IP address and approximate location (general country/city level)</li>
+            <li>App interactions (such as app launches, taps, and ad interactions)</li>
+            <li>Performance diagnostics (such as app launch time, hang rate, and energy usage)</li>
         </ul>
         <p>This data is processed in accordance with Google's Privacy Policy. For more details on how Google uses this data, please visit:<br>
-        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a></p>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a></p>
 
-        <h2>3. Data Retention and Deletion</h2>
+        <h2 id="data-deletion">3. Account &amp; Data Deletion (Retention &amp; User Controls)</h2>
+        <p>Vineyard Tech provides both instant on-device controls and web/email-based deletion options for FastGit users, without requiring you to reinstall the app.</p>
+
+        <div class="deletion-box">
+            <h3>How to Request Account Access Revocation &amp; Data Deletion (Without Reinstalling FastGit)</h3>
+            <ol>
+                <li><strong>Revoke FastGit OAuth Access on GitHub (Web):</strong> Visit <a href="https://github.com/settings/applications" target="_blank" rel="noopener noreferrer">https://github.com/settings/applications</a> (Authorized OAuth Apps), select <strong>FastGit</strong>, and click <strong>Revoke</strong>. This immediately terminates all FastGit access to your GitHub account.</li>
+                <li><strong>Request Deletion of Support &amp; Associated Records (Email):</strong> Send an email to <a href="mailto:contact@vineyardtech.online?subject=FastGit%20Account%20and%20Data%20Deletion%20Request">contact@vineyardtech.online</a> or <a href="mailto:josymvine@gmail.com?subject=FastGit%20Account%20and%20Data%20Deletion%20Request">josymvine@gmail.com</a> with the subject line <code>FastGit Account and Data Deletion Request</code> and include the email address or GitHub username associated with your inquiry.</li>
+            </ol>
+            <p style="margin-bottom: 0;"><strong>Processing Timeframe:</strong> All verified deletion requests for support/contact records are completed within <strong>30 days</strong> of receipt, with email confirmation sent once deleted.</p>
+        </div>
+
+        <h3>In-App Partial &amp; Local Data Deletion Controls</h3>
         <ul>
-            <li><strong>Local Data:</strong> You may clear your cached data, stored repository trees, and account credentials at any time directly in the app via Settings -> App -> Clear Cache or by signing out of your account via Settings -> Auth -> Log Out. Uninstalling the app permanently purges all locally stored credentials and cache.</li>
-            <li><strong>Support Messages:</strong> Information submitted via the Contact Us form is retained only as long as necessary to address your feedback or support ticket, after which you may request deletion by contacting us.</li>
+            <li><strong>Clear Cached Data:</strong> Open FastGit and go to <code>Settings &rarr; App &rarr; Clear Cache</code> to delete cached repository trees and temporary local data without signing out.</li>
+            <li><strong>Sign Out / Remove Accounts:</strong> Go to <code>Settings &rarr; Auth &rarr; Log Out</code> (or use the Account Switcher Edit mode) to remove one or all stored GitHub OAuth tokens and session records from your device immediately.</li>
+            <li><strong>Delete Saved Keystore Profiles:</strong> Go to <code>Settings &rarr; Keys</code> to delete any locally stored Keystore profiles.</li>
+            <li><strong>Uninstall App:</strong> Uninstalling FastGit permanently deletes all local tokens, Room databases, Keystore profiles, and cached files stored in app private storage.</li>
         </ul>
 
-        <h2>4. Security of Your Information</h2>
+        <h3>Data Deleted, Data Retained &amp; Retention Periods</h3>
+        <ul>
+            <li><strong>Data Deleted Immediately:</strong> Local GitHub OAuth tokens, User ID/username session data, Room cache entries, saved Keystore profiles, and internal Live Logs are permanently erased immediately upon Log Out, Clear Cache, or app uninstallation.</li>
+            <li><strong>Support Inquiries (Formspree):</strong> Name, email address, and message content submitted via the Contact Us screen are retained only as long as necessary to resolve your inquiry (up to 90 days if inactive), or deleted within <strong>30 days</strong> upon your deletion request.</li>
+            <li><strong>Data Not Controlled by Vineyard Tech:</strong> Your GitHub account, repositories, commits, and files reside on GitHub's servers and remain unaffected unless you delete them directly on <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a>. Advertising and diagnostic telemetry processed by Google AdMob is governed by Google's retention policies; you may reset or delete your Android Advertising ID anytime via Android <code>Settings &rarr; Google &rarr; Ads</code>.</li>
+        </ul>
+
+        <h2 id="security">4. Security of Your Information</h2>
         <p>All external network communication performed by FastGit—including requests to the GitHub REST API, Google AdMob services, and Formspree support endpoints—is conducted strictly over secure, encrypted HTTPS/TLS connections. We do not sell, rent, monetize, or trade any personal information or user code to third parties.</p>
 
-        <h2>5. Children's Privacy</h2>
+        <h2 id="childrens-privacy">5. Children's Privacy</h2>
         <p>FastGit is a professional developer utility intended for software developers and individuals aged 18 and older. We do not knowingly collect personal information from children under the age of 13.</p>
 
-        <h2>6. Updates to This Privacy Policy</h2>
+        <h2 id="updates">6. Updates to This Privacy Policy</h2>
         <p>We may update this Privacy Policy periodically to reflect app updates, policy changes, or legal requirements. Any modifications will be posted directly to this URL with an updated "Last updated" date.</p>
 
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at:</p>
+        <h2 id="contact-us">7. Contact Us</h2>
+        <p>If you have any questions, concerns, or data deletion requests regarding this Privacy Policy or FastGit, please contact us at:</p>
         <ul class="contact-list">
+            <li><strong>App Name:</strong> FastGit</li>
             <li><strong>Organization:</strong> Vineyard Tech</li>
-            <li><strong>Business Contact:</strong> <a href="mailto:contact@vineyardtech.online">contact@vineyardtech.online</a></li>
+            <li><strong>Business &amp; Privacy Contact:</strong> <a href="mailto:contact@vineyardtech.online">contact@vineyardtech.online</a></li>
             <li><strong>Developer Email:</strong> <a href="mailto:josymvine@gmail.com">josymvine@gmail.com</a></li>
         </ul>
     </div>
