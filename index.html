@@ -11,22 +11,42 @@
             color: #24292e;
             background-color: #f6f8fa;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
+        /* Fixed Header Banner */
+        .header-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #1f2428 0%, #24292e 100%);
+            color: #ffffff;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .header-banner h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #58a6ff;
+            letter-spacing: 0.5px;
+        }
+        .header-banner p {
+            margin: 4px 0 0 0;
+            font-size: 13px;
+            color: #8b949e;
+        }
+        /* Main Container placed below the fixed header */
         .container {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 110px auto 40px auto; /* Top margin accounts for fixed header height */
             background: #ffffff;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            font-size: 28px;
-            border-bottom: 1px solid #eaecef;
-            padding-bottom: 10px;
-            margin-top: 0;
-            color: #0366d6;
+            box-sizing: border-box;
         }
         h2 {
             font-size: 18px;
@@ -64,11 +84,31 @@
         a:hover {
             text-decoration: underline;
         }
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 100px;
+                padding: 20px;
+                border-radius: 0;
+            }
+            .header-banner {
+                padding: 18px 15px;
+            }
+            .header-banner h1 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Non-scrollable Fixed Header Banner -->
+    <div class="header-banner">
+        <h1>FastGit Privacy Policy</h1>
+        <p>Vineyard Tech Developer Documentation</p>
+    </div>
+
+    <!-- Scrollable Content Body -->
     <div class="container">
-        <h1>Privacy Policy for FastGit</h1>
         <div class="date">Last updated: November 16, 2026</div>
 
         <p>FastGit ("we", "our", "us", or "the app"), developed and operated by Vineyard Tech, is committed to respecting and protecting your privacy. This Privacy Policy details our practices regarding the collection, usage, and safeguarding of information when you download, install, and use the FastGit mobile application.</p>
@@ -115,5 +155,6 @@
             <li><strong>Developer Email:</strong> <a href="mailto:josymvine@gmail.com">josymvine@gmail.com</a></li>
         </ul>
     </div>
+
 </body>
 </html>
